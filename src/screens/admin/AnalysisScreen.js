@@ -35,7 +35,7 @@ const AnalysisScreen = () => {
 
     // VOTE ANALYSIS
     useEffect(() => {
-        axios.get(`/api/analysis/voteCount`)
+        axios.get(`https://voting-app-server.onrender.com/api/analysis/voteCount`)
         .then((res) => {
             setVoteCountLoader(true)
             setVoteCount(res.data.vote)
@@ -50,7 +50,7 @@ const AnalysisScreen = () => {
    // HAND GENDER ANALYSIS
     useEffect(() => {
      
-        axios.get(`/api/analysis/handGender`)
+        axios.get(`https://voting-app-server.onrender.com/api/analysis/handGender`)
         .then((res) => {
             setHandGenderLoader(true)
             setHandGender({
@@ -77,7 +77,7 @@ const AnalysisScreen = () => {
     // LEAF GENDER ANALYSIS
     useEffect(() => {
      
-        axios.get(`/api/analysis/leafGender`)
+        axios.get(`https://voting-app-server.onrender.com/api/analysis/leafGender`)
         .then((res) => {
             setLeafGenderLoader(true)
             setLeafGender({
@@ -104,7 +104,7 @@ const AnalysisScreen = () => {
     // USER GENDER ANALYSIS
     useEffect(() => {
      
-        axios.get(`/api/analysis/userGender`)
+        axios.get(`https://voting-app-server.onrender.com/api/analysis/userGender`)
         .then((res) => {
             setUserGenderLoader(true)
             setUserGender({
@@ -132,7 +132,7 @@ const AnalysisScreen = () => {
    // USER LOCATION ANALYSIS
     useEffect(() => {
      
-        axios.get(`/api/analysis/userLocation`)
+        axios.get(`https://voting-app-server.onrender.com/api/analysis/userLocation`)
         .then((res) => {
             setUserLocationLoader(true)
             setUserLocation({
@@ -197,7 +197,7 @@ const AnalysisScreen = () => {
     // VOTE GENDER ANALYSIS
     useEffect(() => {
      
-        axios.get(`/api/analysis/voteGender`)
+        axios.get(`https://voting-app-server.onrender.com/api/analysis/voteGender`)
         .then((res) => {
             setVoteGenderLoader(true)
             setVoteGender({
@@ -226,7 +226,7 @@ const AnalysisScreen = () => {
     // VOTE LOCATION ANALYSIS
     useEffect(() => {
      
-        axios.get(`/api/analysis/voteLocation`)
+        axios.get(`https://voting-app-server.onrender.com/api/analysis/voteLocation`)
         .then((res) => {
             setVoteLocationLoader(true)
             setVoteLocation({
