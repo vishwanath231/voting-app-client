@@ -21,7 +21,7 @@ const LoginScreen = ({ userLogin, userLoginInfo }) => {
 
     useEffect(() => {
       
-        if (info && info.role && info.role === 'user') {
+        if (info && info?.role && info?.role === 'user') {
             navigate('/generate')
         }
 
