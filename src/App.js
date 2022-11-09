@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { authLoaded } from './redux/actions/authActions';
 import Router from './routes/Router';
 import { connect } from 'react-redux';
+import { HashRouter } from 'react-router-dom'
 
 const App = ({ authLoaded }) => {
 
@@ -10,7 +11,9 @@ const App = ({ authLoaded }) => {
      },[authLoaded])
 
     return (
-        <Router />
+       <HashRouter>
+         <Router />
+       </HashRouter>
     )
 }
 
