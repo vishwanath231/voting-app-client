@@ -23,7 +23,7 @@ const AdminLoginScreen = ({ adminLoginInfo, adminLogin }) => {
 
     useEffect(() => {
       
-        if (info && info?.role && info?.role === 'admin') {
+        if (info) {
             navigate('/admin/dashboard')
         }
 
