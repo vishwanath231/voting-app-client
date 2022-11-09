@@ -297,11 +297,11 @@ const AnalysisScreen = () => {
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10'>
                         <div className='lg:w-96 w-full shadow rounded p-4 bg-white'>
                             <div className='mb-3 text-[#ca6702] font-medium text-3xl'>Hand</div>
-                            { voteCountLoader ? <div className='font-medium text-2xl'>+{voteCount.hand}</div> : <Loader /> }
+                            { voteCountLoader ? <div className='font-medium text-2xl'>+{voteCount?.hand}</div> : <Loader /> }
                         </div>
                         <div className='lg:w-96 w-full shadow rounded p-4 bg-white'>
                             <div className='mb-3 text-[#bc4749] font-medium text-3xl'>Leaf</div>
-                            { voteCountLoader ? <div className='font-medium text-2xl'>+{voteCount.leaf}</div> : <Loader /> }
+                            { voteCountLoader ? <div className='font-medium text-2xl'>+{voteCount?.leaf}</div> : <Loader /> }
                         </div>
                     </div>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10'>
