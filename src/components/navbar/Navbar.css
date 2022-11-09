@@ -1,0 +1,28 @@
+.nav-container{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* position: relative; */
+    z-index: 2;
+}
+
+.nav-scroll{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+/* user Model box */
+.model__btn{
+    position: relative;
+}
+
+.model__btn .showModel__box{
+    position: absolute;
+    top: 20px;
+    right: -1px;
+}
+/* End */

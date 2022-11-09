@@ -1,0 +1,42 @@
+
+.sideBar__nav,
+.dashboard__header{
+    display: none;
+}
+
+.mobile__nav{
+    display: block;
+    position: relative;
+}
+
+.mobile__nav .mobile__menu{
+    position: absolute;
+    top: 60px;
+    left: 0px;
+    width: 100%;
+    height: calc(100vh - 4rem);
+    background-color: #fff;
+    z-index: 20;
+}
+
+@media(min-width:768px){
+    .sideBar__nav,
+    .dashboard__header{
+        display: block;
+    }
+    .mobile__nav{
+        display: none;
+    }
+}
+
+
+
+.adminModel__btn{
+    position: relative;
+}
+
+.adminModel__btn .adminDashboard__model{
+    position: absolute;
+    top: 20px;
+    right: 0px;
+}
