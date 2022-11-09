@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom'
 
 // CLIENT
 import LoginScreen from '../screens/client/auth/LoginScreen';
@@ -41,7 +42,7 @@ import NominationFormScreen from '../screens/admin/NominationFormScreen';
 const Router = () => {
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Routes>
                 <Route path='/' element={ <RouterLayout /> } >
                
@@ -97,7 +98,7 @@ const Router = () => {
                 </Route>
             </Routes>
             {/* <CopyRights /> */}
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
