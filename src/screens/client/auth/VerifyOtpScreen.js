@@ -26,8 +26,6 @@ const VerifyOtpScreen = ({ verifyOtp, userVerifyOTP, logout }) => {
             ...data,
             [name]: value
         })
-
-        
     }
 
     useEffect(() => {
@@ -74,7 +72,39 @@ const VerifyOtpScreen = ({ verifyOtp, userVerifyOTP, logout }) => {
             }
         }
     }
-   
+
+    const [ minutes, setMinutes ] = useState(2);
+    const [seconds, setSeconds ] =  useState(0);
+
+
+    useEffect(()=>{
+        
+        let myInterval = setInterval(() => {
+
+            if (seconds > 0) {
+                setSeconds(seconds - 1);
+            }
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(myInterval)
+                        
+                } else {
+                    setMinutes(minutes - 1);
+                    setSeconds(59);
+                }
+            } 
+        }, 1000)
+  
+        return ()=> {
+            clearInterval(myInterval);
+        };
+    });
+
+
+    const HandlerResendOtp = () => {
+        localStorage.removeItem('userPin')
+        document.location.href = '/generate';
+    }
 
     return (
         <main className='screen__height'>
@@ -140,6 +170,14 @@ const VerifyOtpScreen = ({ verifyOtp, userVerifyOTP, logout }) => {
                         />
                     </div>
                 </div>
+                <div className='flex justify-between items-center mb-5 max-w-md  '>
+                    <p>DON'T RECEIVE OTP ? </p>
+                { minutes === 0 && seconds === 0 ?
+                    <button type="button" onClick={HandlerResendOtp} className='text-[#4361ee]'>RESENT OTP</button>
+                    : <h1> {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</h1> 
+                }
+                </div>
+                
                 <div className='flex items-center sm:flex-row flex-col'>
                     <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full sm:w-fit sm:mr-3 mr-0 sm:mb-0 mb-3">Verify</button>
                     <button type="button" onClick={logoutHandler} className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full sm:w-fit">cancel</button>
