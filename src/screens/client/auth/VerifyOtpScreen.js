@@ -100,10 +100,9 @@ const VerifyOtpScreen = ({ verifyOtp, userVerifyOTP, logout }) => {
         };
     });
 
-
     const HandlerResendOtp = () => {
         localStorage.removeItem('userPin')
-        document.location.href = '/generate';
+        window.location.reload(false);
     }
 
     return (
