@@ -1,10 +1,11 @@
 import React from 'react';
 import Navbar from '../../components/navbar/Navbar';
 import { Link } from 'react-router-dom';
+import { BiMessageRoundedDetail } from 'react-icons/bi';
 
 const HomeScreen = () => {
     return (
-        <>
+        <div className='relative'>
             <Navbar />
             <div className='pt-28 pb-10 bg-gray-100 min-h-screen'>
                 <div className='flex justify-center items-center max-w-screen-lg px-4 my-0 mx-auto'>
@@ -17,8 +18,13 @@ const HomeScreen = () => {
                         </div>
                     </div>
                 </div>
+                <div className='absolute right-8 bottom-8 z-20'>
+                    <Link to='/user/contact' className='block shadow-2xl bg-blue-400 p-3 rounded-full text-2xl'>
+                        <BiMessageRoundedDetail />
+                    </Link>
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 
