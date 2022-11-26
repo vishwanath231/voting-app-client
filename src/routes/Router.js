@@ -10,6 +10,7 @@ import VoteFormScreen from '../screens/client/VoteFormScreen';
 import NominationListScreen from '../screens/client/NominationListScreen';
 import UNominationDetailsScreen from '../screens/client/UNominationDetailsScreen';
 import UserProfileScreen from '../screens/client/UserProfileScreen';
+import UserContactScreen from '../screens/client/UserContactScreen';
 
 
 // ADMIN
@@ -69,6 +70,7 @@ const Router = () => {
                         <Route path='user/nominationList' element={<NominationListScreen /> } />
                         <Route path='user/nomination/:id' element={<UNominationDetailsScreen /> } />
                         <Route path='user/profile' element={<UserProfileScreen /> } />
+                        <Route path='user/contact' element={ <UserContactScreen /> } />
                     </Route>
 
                 
