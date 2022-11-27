@@ -35,7 +35,7 @@ const AnalysisScreen = () => {
 
     // VOTE ANALYSIS
     useEffect(() => {
-        axios.get(`https://voting-app-server.onrender.com/api/analysis/voteCount`)
+        axios.get(`/api/analysis/voteCount`)
         .then((res) => {
             setVoteCountLoader(true)
             setVoteCount(res.data.vote)
@@ -50,7 +50,7 @@ const AnalysisScreen = () => {
    // HAND GENDER ANALYSIS
     useEffect(() => {
      
-        axios.get(`https://voting-app-server.onrender.com/api/analysis/handGender`)
+        axios.get(`/api/analysis/handGender`)
         .then((res) => {
             setHandGenderLoader(true)
             setHandGender({
@@ -77,7 +77,7 @@ const AnalysisScreen = () => {
     // LEAF GENDER ANALYSIS
     useEffect(() => {
      
-        axios.get(`https://voting-app-server.onrender.com/api/analysis/leafGender`)
+        axios.get(`/api/analysis/leafGender`)
         .then((res) => {
             setLeafGenderLoader(true)
             setLeafGender({
@@ -104,7 +104,7 @@ const AnalysisScreen = () => {
     // USER GENDER ANALYSIS
     useEffect(() => {
      
-        axios.get(`https://voting-app-server.onrender.com/api/analysis/userGender`)
+        axios.get(`/api/analysis/userGender`)
         .then((res) => {
             setUserGenderLoader(true)
             setUserGender({
@@ -132,7 +132,7 @@ const AnalysisScreen = () => {
    // USER LOCATION ANALYSIS
     useEffect(() => {
      
-        axios.get(`https://voting-app-server.onrender.com/api/analysis/userLocation`)
+        axios.get(`/api/analysis/userLocation`)
         .then((res) => {
             setUserLocationLoader(true)
             setUserLocation({
@@ -197,7 +197,7 @@ const AnalysisScreen = () => {
     // VOTE GENDER ANALYSIS
     useEffect(() => {
      
-        axios.get(`https://voting-app-server.onrender.com/api/analysis/voteGender`)
+        axios.get(`/api/analysis/voteGender`)
         .then((res) => {
             setVoteGenderLoader(true)
             setVoteGender({
@@ -226,7 +226,7 @@ const AnalysisScreen = () => {
     // VOTE LOCATION ANALYSIS
     useEffect(() => {
      
-        axios.get(`https://voting-app-server.onrender.com/api/analysis/voteLocation`)
+        axios.get(`/api/analysis/voteLocation`)
         .then((res) => {
             setVoteLocationLoader(true)
             setVoteLocation({
@@ -297,11 +297,11 @@ const AnalysisScreen = () => {
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10'>
                         <div className='lg:w-96 w-full shadow rounded p-4 bg-white'>
                             <div className='mb-3 text-[#ca6702] font-medium text-3xl'>Hand</div>
-                            { voteCountLoader ? <div className='font-medium text-2xl'>+{voteCount?.hand}</div> : <Loader /> }
+                            { voteCountLoader ? <div className='font-medium text-2xl'>+{voteCount.hand}</div> : <Loader /> }
                         </div>
                         <div className='lg:w-96 w-full shadow rounded p-4 bg-white'>
                             <div className='mb-3 text-[#bc4749] font-medium text-3xl'>Leaf</div>
-                            { voteCountLoader ? <div className='font-medium text-2xl'>+{voteCount?.leaf}</div> : <Loader /> }
+                            { voteCountLoader ? <div className='font-medium text-2xl'>+{voteCount.leaf}</div> : <Loader /> }
                         </div>
                     </div>
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-10'>

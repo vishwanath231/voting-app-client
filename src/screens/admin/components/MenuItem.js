@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './main.css';
 import { HiOutlineUsers} from 'react-icons/hi';
-import { RiUser2Line } from 'react-icons/ri';
+import { RiContactsLine, RiUser2Line } from 'react-icons/ri';
 import { TbDashboard } from 'react-icons/tb';
 import { MdOutlineHowToVote } from 'react-icons/md';
 import { TbDeviceAnalytics } from 'react-icons/tb';
@@ -61,6 +61,15 @@ const MenuItem = ({ logout }) => {
                     <div className='flex items-center'>
                         <TbDeviceAnalytics className='text-xl text-[#34508D] mr-1' />
                         <p>Analysis</p>
+                    </div>
+                </Link>
+            </div>
+
+            <div className='mb-3'>
+                <Link to='/admin/contactList' className="block py-2 px-4 hover:bg-gray-100">
+                    <div className='flex items-center'>
+                        <RiContactsLine className='text-xl text-[#34508D] mr-1' />
+                        <p>Contacts</p>
                     </div>
                 </Link>
             </div>

@@ -19,13 +19,13 @@ const RequireAuth = ({ userLoginInfo, adminLoginInfo, allowRoles }) => {
 
     useEffect(() => {
 
-        if (authRole && authRole?.role) {
-            setRole([{ name: authRole?.role }])
+        if (authRole && authRole.role) {
+            setRole([{ name: authRole.role }])
 
         }else{
             
-            if (adminRole && adminRole?.role) {
-                setRole([{ name: adminRole?.role }])
+            if (adminRole && adminRole.role) {
+                setRole([{ name: adminRole.role }])
             }else{
                 setRole([{ }])
             }

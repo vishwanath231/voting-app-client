@@ -37,6 +37,10 @@ import RequireVerifyOtp from './auth/RequireVerifyOtp';
 import NotFoundPage from './pages/NotFoundPage';
 import UnauthorizedPage from './pages/UnauthorizedPage';
 import NominationFormScreen from '../screens/admin/NominationFormScreen';
+import ContactListScreen from '../screens/admin/ContactListScreen';
+import ContactDetailsScreen from '../screens/admin/ContactDetailsScreen';
+import AdminListScreen from '../screens/admin/AdminListScreen';
+import AdminDetailsScreen from '../screens/admin/AdminDetailsScreen';
 
 
 const Router = () => {
@@ -89,7 +93,11 @@ const Router = () => {
                         <Route path='admin/nomination/add' element={ <NominationFormScreen /> } /> 
                         <Route path='admin/nominationList' element={ <AdminNominationListScreen /> } /> 
                         <Route path='admin/nomination/:id' element={ <NominationDetailsScreen /> } /> 
+                        <Route path='admin/contactList' element={ <ContactListScreen /> } />
+                        <Route path='admin/contact/:id' element={ <ContactDetailsScreen /> } />  
                         <Route path='admin/analysis' element={ <AnalysisScreen /> } /> 
+                        <Route path='admin/all' element={ <AdminListScreen /> } /> 
+                        <Route path='admin/all/:id' element={ <AdminDetailsScreen /> } /> 
                     </Route>
 
 

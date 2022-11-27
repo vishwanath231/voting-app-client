@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
 import { 
+    adminDetailsReducer,
+    adminListReducer,
+    contactDeleteReducer,
+    contactDetailsReducer,
+    contactListReducer,
     newNominationReducer,
     nominationDetailsReducer,
     nominationListReducer, 
@@ -17,6 +22,7 @@ import {
     authLoadedReducer
 } from './authReducers';
 import { 
+    contactReducer,
     userViewNominationDetailsReducer, 
     userViewNominationListReducer, 
     voteReducer
@@ -30,6 +36,7 @@ export const reducers = combineReducers({
     userViewNominationList: userViewNominationListReducer,
     userViewNominationDetails: userViewNominationDetailsReducer,
     vote: voteReducer,
+    userContact: contactReducer,
 
     adminLoginInfo: adminLoginReducer,
     userList: userListReducer,
@@ -38,6 +45,11 @@ export const reducers = combineReducers({
     userDetails: userDetailsReducer,
     nominationDetails: nominationDetailsReducer,
     voteList: voteListReducer,
-    voteDetails: voteDetailsReducer
+    voteDetails: voteDetailsReducer,
+    contactList: contactListReducer,
+    contactDetails: contactDetailsReducer,
+    contactDelete: contactDeleteReducer,
+    adminList: adminListReducer,
+    adminDetails: adminDetailsReducer
 })
 

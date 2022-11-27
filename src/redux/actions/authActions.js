@@ -41,7 +41,7 @@ export const authLoaded = () => async (dispatch, getState) => {
                 }
             }
     
-            const { data } = await axios.get('https://voting-app-server.onrender.com/api/users/profile', config)
+            const { data } = await axios.get('/api/users/profile', config)
     
             dispatch({
                 type: AUTH_LOADED_SUCCESS,
@@ -59,7 +59,7 @@ export const authLoaded = () => async (dispatch, getState) => {
                     }
                 }
         
-                const { data } = await axios.get('https://voting-app-server.onrender.com/api/admin/profile', config)
+                const { data } = await axios.get('/api/admin/profile', config)
         
                 dispatch({
                     type: AUTH_LOADED_SUCCESS,
@@ -102,7 +102,7 @@ export const userLogin = (loginData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('https://voting-app-server.onrender.com/api/users/login', loginData, config)
+        const { data } = await axios.post('/api/users/login', loginData, config)
 
 
         const authData = {
@@ -152,7 +152,7 @@ export const userGenerateOTP = (datas) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.post('https://voting-app-server.onrender.com/api/users/pin', datas, config)
+        const { data } = await axios.post('/api/users/pin', datas, config)
 
 
         dispatch({
@@ -196,7 +196,7 @@ export const userVerifyOTP = (datas) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.post('https://voting-app-server.onrender.com/api/users/verify', datas, config)
+        const { data } = await axios.post('/api/users/verify', datas, config)
 
 
         dispatch({
@@ -235,7 +235,7 @@ export const adminLogin = (loginData) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post('https://voting-app-server.onrender.com/api/admin/login', loginData, config)
+        const { data } = await axios.post('/api/admin/login', loginData, config)
 
 
         const authData = {

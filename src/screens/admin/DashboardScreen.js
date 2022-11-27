@@ -8,23 +8,26 @@ import NominationGif from '../../assets/gif/nomination.gif'
 import AdminGif from '../../assets/gif/admin.gif'
 import ReportGif from '../../assets/gif/report.gif';
 import VoteGif from '../../assets/gif/vote.gif';
+import MessageGif from '../../assets/gif/message.gif';
 import { connect } from 'react-redux';
 import Loader from '../../components/Loader';
-import { getUserList, getNominationList, getVoteList } from '../../redux/actions/adminActions';
+import { getUserList, getNominationList, getVoteList, getContactList } from '../../redux/actions/adminActions';
 
 
-const DashboardScreen = ({ getUserList, getNominationList, userList, nominationList, getVoteList, voteList }) => {
+const DashboardScreen = ({ getUserList, getNominationList, userList, nominationList, getVoteList, voteList, getContactList, contactList }) => {
 
     const {loading:userLoading, users } = userList;
     const {loading:nominationLoading, nominations } = nominationList;
     const {loading:voteLoading, votes } = voteList;
+    const {loading:contactLoading, contacts } = contactList;
 
 
     useEffect(() => {
         getUserList()
         getNominationList()   
         getVoteList()
-    }, [getUserList, getNominationList, getVoteList])
+        getContactList()
+    }, [getUserList, getNominationList, getVoteList, getContactList])
     
 
     return (
@@ -70,7 +73,7 @@ const DashboardScreen = ({ getUserList, getNominationList, userList, nominationL
                             <div className='mt-1 text-md font-medium'>+2</div>
                         </div>
                     </Link>
-                    <Link to='' className='flex bg-white items-center shadow p-4 rounded hover:shadow-xl'>
+                    <Link to='/admin/all' className='flex bg-white items-center shadow p-4 rounded hover:shadow-xl'>
                         <div className='p-4 rounded mr-6' style={{ background: 'linear-gradient(90deg, hsla(11, 82%, 87%, 1) 0%, hsla(299, 85%, 90%, 1) 100%)'  }}>
                             <img src={AdminGif} alt='user' className='w-14 h-14' />
                         </div>
@@ -79,13 +82,14 @@ const DashboardScreen = ({ getUserList, getNominationList, userList, nominationL
                             <div className='mt-1 text-md font-medium'>+1</div>
                         </div>
                     </Link>
-                    <Link to='' className='flex bg-white items-center shadow p-4 rounded hover:shadow-xl'>
+                    <Link to='/admin/contactList' className='flex bg-white items-center shadow p-4 rounded hover:shadow-xl'>
                         <div className='p-4 rounded mr-6' style={{ background: 'linear-gradient(90deg, hsla(233, 100%, 90%, 1) 0%, hsla(0, 0%, 89%, 1) 100%)'  }}>
-                            <img src={VoteGif} alt='user' className='w-14 h-14' style={{ transform: 'rotate(180deg)' }} />
+                            <img src={MessageGif} alt='user' className='w-14 h-14' style={{ transform: 'rotate(180deg)' }} />
                         </div>
                         <div>
-                            <p className='text-xl font-semibold mont-font'>Reports</p>
-                           <div className='mt-1 text-md font-medium'>+5</div>
+                            <p className='text-xl font-semibold mont-font'>Contacts</p>
+                            { contactLoading ? <Loader /> : <div className='mt-1 text-md font-medium'>+{ contacts?.length}</div> }
+                            
                         </div>
                     </Link>
                     
@@ -99,6 +103,8 @@ const mapStateToProps = (state) => ({
     userList: state.userList,
     nominationList: state.nominationList,
     voteList: state.voteList,
+    contactList: state.contactList,
+
 })
 
-export default connect(mapStateToProps, { getUserList, getNominationList, getVoteList })(DashboardScreen);
+export default connect(mapStateToProps, { getUserList, getNominationList, getVoteList, getContactList })(DashboardScreen);
