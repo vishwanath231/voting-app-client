@@ -58,7 +58,7 @@ export const getUserList = () => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/user/list`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/user/list`, config)
 
         dispatch({
             type: USER_LIST_SUCCESS,
@@ -95,7 +95,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/user/${id}`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/user/${id}`, config)
 
         dispatch({
             type: USER_DETAILS_SUCCESS,
@@ -135,7 +135,7 @@ export const postNomination = (nominationData) => async (dispatch, getState) => 
             }
         }
 
-        const { data } = await axios.post(`/api/admin/nomination/add`, nominationData, config)
+        const { data } = await axios.post(`https://voting-app-server.onrender.com/api/admin/nomination/add`, nominationData, config)
 
         dispatch({
             type: NEW_NOMINATION_SUCCESS,
@@ -173,7 +173,7 @@ export const getNominationList = () => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/nomination/list`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/nomination/list`, config)
 
         dispatch({
             type: NOMINATION_LIST_SUCCESS,
@@ -211,7 +211,7 @@ export const getNominationDetails = (id) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/nomination/${id}`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/nomination/${id}`, config)
 
         dispatch({
             type: NOMINATION_DETAILS_SUCCESS,
@@ -250,7 +250,7 @@ export const getVoteList = () => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/vote`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/vote`, config)
 
         dispatch({
             type: VOTE_LIST_SUCCESS,
@@ -287,7 +287,7 @@ export const getVoteDetails = (id) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/vote/${id}`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/vote/${id}`, config)
 
         dispatch({
             type: VOTE_DETAILS_SUCCESS,
@@ -326,7 +326,7 @@ export const getContactList = () => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/contact`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/contact`, config)
 
         dispatch({
             type: USER_CONTACT_LIST_SUCCESS,
@@ -363,7 +363,7 @@ export const getContactDetails = (id) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/contact/${id}`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/contact/${id}`, config)
 
         dispatch({
             type: USER_CONTACT_DETAILS_SUCCESS,
@@ -401,7 +401,7 @@ export const deleteContact = (id) => async (dispatch, getState) => {
             }
         }
 
-        await axios.delete(`/api/admin/contact/del/${id}`, config)
+        await axios.delete(`https://voting-app-server.onrender.com/api/admin/contact/del/${id}`, config)
 
         dispatch({
             type: USER_CONTACT_DELETE_SUCCESS,
@@ -438,7 +438,7 @@ export const getAdminList = () => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/all`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/all`, config)
 
         dispatch({
             type: ADMIN_LIST_SUCCESS,
@@ -475,7 +475,7 @@ export const getAdminDetails = (id) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/admin/all/${id}`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/admin/all/${id}`, config)
 
         dispatch({
             type: ADMIN_DETAILS_SUCCESS,

@@ -33,7 +33,7 @@ export const getUserViewNominationList = () => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.get(`/api/users/nomination`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/users/nomination`, config)
 
         dispatch({
             type: USER_VIEW_NOMINATION_LIST_SUCCESS,
@@ -71,7 +71,7 @@ export const getUserViewNominationDetails = (id) => async (dispatch, getState) =
             }
         }
 
-        const { data } = await axios.get(`/api/users/nomination/${id}`, config)
+        const { data } = await axios.get(`https://voting-app-server.onrender.com/api/users/nomination/${id}`, config)
 
         dispatch({
             type: USER_VIEW_NOMINATION_DETAILS_SUCCESS,
@@ -108,7 +108,7 @@ export const userVote = (voteData) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.post('/api/users/vote', voteData, config)
+        const { data } = await axios.post('https://voting-app-server.onrender.com/api/users/vote', voteData, config)
 
         dispatch({
             type: VOTE_SUCCESS,
@@ -147,7 +147,7 @@ export const userContacts = (contactData) => async (dispatch, getState) => {
             }
         }
 
-        const { data } = await axios.post('/api/users/contact', contactData, config)
+        const { data } = await axios.post('https://voting-app-server.onrender.com/api/users/contact', contactData, config)
 
         dispatch({
             type: USER_CONTACT_SUCCESS,
