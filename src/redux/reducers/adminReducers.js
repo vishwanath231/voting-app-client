@@ -35,7 +35,10 @@ import {
     ADMIN_LIST_FAIL,
     ADMIN_DETAILS_REQUEST,
     ADMIN_DETAILS_SUCCESS,
-    ADMIN_DETAILS_FAIL
+    ADMIN_DETAILS_FAIL,
+    VOTE_LOCATION_DETAILS_REQUEST,
+    VOTE_LOCATION_DETAILS_SUCCESS,
+    VOTE_LOCATION_DETAILS_FAIL
 } from '../constants/adminConstants';
 
 
@@ -360,6 +363,32 @@ export const adminDetailsReducer = (state = { admin:{} }, { type, payload }) => 
             }
 
         case ADMIN_DETAILS_FAIL:
+            return {
+                loading: false,
+                error: payload
+            }
+
+        default:
+            return state;
+    }
+}
+
+
+export const voteLocationDetailsReducer = (state = { vote: { } }, { type, payload }) => {
+
+    switch (type) {
+        case VOTE_LOCATION_DETAILS_REQUEST:
+            return {
+                loading: true,
+            }
+        
+        case VOTE_LOCATION_DETAILS_SUCCESS:
+            return {
+                loading: false,
+                vote: payload
+            }
+
+        case VOTE_LOCATION_DETAILS_FAIL:
             return {
                 loading: false,
                 error: payload

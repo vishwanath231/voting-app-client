@@ -34,7 +34,10 @@ import {
     ADMIN_LIST_FAIL,
     ADMIN_DETAILS_REQUEST,
     ADMIN_DETAILS_SUCCESS,
-    ADMIN_DETAILS_FAIL
+    ADMIN_DETAILS_FAIL,
+    VOTE_LOCATION_DETAILS_REQUEST,
+    VOTE_LOCATION_DETAILS_SUCCESS,
+    VOTE_LOCATION_DETAILS_FAIL
 } from '../constants/adminConstants';
 import axios from 'axios';
 
@@ -488,6 +491,44 @@ export const getAdminDetails = (id) => async (dispatch, getState) => {
         
         dispatch({
             type: ADMIN_DETAILS_FAIL,
+            payload: resErr
+        }) 
+    }
+}
+
+
+
+
+
+
+export const getVoteLocation = (val) => async (dispatch) => {
+
+    try {
+        
+        dispatch({
+            type: VOTE_LOCATION_DETAILS_REQUEST
+        })
+
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+
+        const { data } = await axios.post(`/api/analysis/oneLocation`, val, config)
+
+        dispatch({
+            type: VOTE_LOCATION_DETAILS_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+
+        const resErr =  error.response && error.response.data.message ? error.response.data.message : error.message
+        
+        dispatch({
+            type: VOTE_LOCATION_DETAILS_FAIL,
             payload: resErr
         }) 
     }

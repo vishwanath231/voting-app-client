@@ -12,11 +12,12 @@ import MessageGif from '../../assets/gif/message.gif';
 import { connect } from 'react-redux';
 import Loader from '../../components/Loader';
 import { getUserList, getNominationList, getVoteList, getContactList, getAdminList } from '../../redux/actions/adminActions';
+import Message from '../../components/Message';
 
 
 const DashboardScreen = ({ getUserList, getNominationList, userList, nominationList, getVoteList, voteList, getContactList, contactList, adminList, getAdminList }) => {
 
-    const {loading:userLoading, users } = userList;
+    const {loading:userLoading, users, error } = userList;
     const {loading:nominationLoading, nominations } = nominationList;
     const {loading:voteLoading, votes } = voteList;
     const {loading:adminLoading, admins } = adminList;
@@ -38,6 +39,7 @@ const DashboardScreen = ({ getUserList, getNominationList, userList, nominationL
             <MobileNav />
             <Header />
             <div className='md:ml-72 px-4'>
+                { error && <Message error msg={error} /> }
                 <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                     <Link to='/admin/userList' className='flex bg-white items-center shadow p-4 rounded hover:shadow-xl'>
                         <div className='p-4 rounded mr-6' style={{ background: 'linear-gradient(90deg, hsla(18, 76%, 85%, 1) 0%, hsla(203, 69%, 84%, 1) 100%)'  }}>

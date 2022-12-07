@@ -11,7 +11,8 @@ import {
     userDetailsReducer, 
     userListReducer,
     voteDetailsReducer,
-    voteListReducer
+    voteListReducer,
+    voteLocationDetailsReducer
 } from './adminReducers';
 
 import { 
@@ -50,6 +51,8 @@ export const reducers = combineReducers({
     contactDetails: contactDetailsReducer,
     contactDelete: contactDeleteReducer,
     adminList: adminListReducer,
-    adminDetails: adminDetailsReducer
+    adminDetails: adminDetailsReducer,
+
+    voteDistrict: voteLocationDetailsReducer
 })
 
