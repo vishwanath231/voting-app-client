@@ -516,7 +516,7 @@ export const getVoteLocation = (val) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post(`/api/analysis/oneLocation`, val, config)
+        const { data } = await axios.post(`https://voting-app-server.onrender.com/api/analysis/oneLocation`, val, config)
 
         dispatch({
             type: VOTE_LOCATION_DETAILS_SUCCESS,
