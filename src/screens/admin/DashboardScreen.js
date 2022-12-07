@@ -11,14 +11,15 @@ import VoteGif from '../../assets/gif/vote.gif';
 import MessageGif from '../../assets/gif/message.gif';
 import { connect } from 'react-redux';
 import Loader from '../../components/Loader';
-import { getUserList, getNominationList, getVoteList, getContactList } from '../../redux/actions/adminActions';
+import { getUserList, getNominationList, getVoteList, getContactList, getAdminList } from '../../redux/actions/adminActions';
 
 
-const DashboardScreen = ({ getUserList, getNominationList, userList, nominationList, getVoteList, voteList, getContactList, contactList }) => {
+const DashboardScreen = ({ getUserList, getNominationList, userList, nominationList, getVoteList, voteList, getContactList, contactList, adminList, getAdminList }) => {
 
     const {loading:userLoading, users } = userList;
     const {loading:nominationLoading, nominations } = nominationList;
     const {loading:voteLoading, votes } = voteList;
+    const {loading:adminLoading, admins } = adminList;
     const {loading:contactLoading, contacts } = contactList;
 
 
@@ -26,8 +27,9 @@ const DashboardScreen = ({ getUserList, getNominationList, userList, nominationL
         getUserList()
         getNominationList()   
         getVoteList()
+        getAdminList()
         getContactList()
-    }, [getUserList, getNominationList, getVoteList, getContactList])
+    }, [getUserList, getNominationList, getVoteList, getAdminList, getContactList])
     
 
     return (
@@ -79,7 +81,7 @@ const DashboardScreen = ({ getUserList, getNominationList, userList, nominationL
                         </div>
                         <div>
                             <p className='text-xl font-semibold mont-font'>Admins</p>
-                            <div className='mt-1 text-md font-medium'>+1</div>
+                            { adminLoading ? <Loader /> :  <div className='mt-1 text-md font-medium'>+{ admins?.length}</div>  }
                         </div>
                     </Link>
                     <Link to='/admin/contactList' className='flex bg-white items-center shadow p-4 rounded hover:shadow-xl'>
@@ -103,8 +105,9 @@ const mapStateToProps = (state) => ({
     userList: state.userList,
     nominationList: state.nominationList,
     voteList: state.voteList,
+    adminList: state.adminList,
     contactList: state.contactList,
 
 })
 
-export default connect(mapStateToProps, { getUserList, getNominationList, getVoteList, getContactList })(DashboardScreen);
+export default connect(mapStateToProps, { getUserList, getNominationList, getVoteList, getAdminList, getContactList })(DashboardScreen);

@@ -41,7 +41,7 @@ const VoteDetailsScreen = ({ getVoteDetails, voteDetails }) => {
                                         </div>
                                     </div>
                                     <div className='col-span-2 p-4 bg-white shadow rounded'>
-                                        <div className='uppercase mb-4 px-4 text-xl text-[#dc143c] font-bold'>peronal details</div>
+                                        <div className='uppercase mb-4 px-4 text-xl text-[#dc143c] font-bold'>personal details</div>
                                         <div className='grid lg:grid-cols-2 grid-cols-1 p-4 lg:gap-x-4'>
                                             <div className=''>
                                                 { vote?.user?._id && <div className='py-1'><span className='font-bold text-[#34508D]'>ID :</span> { vote?.user?._id }</div>} 
