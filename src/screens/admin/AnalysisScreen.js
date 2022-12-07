@@ -305,10 +305,13 @@ const AnalysisScreen = ({ voteDistrict, getVoteLocation }) => {
       
         if (vote?.hand || vote?.leaf) {
             setShow(true)
-
         }
 
-    }, [vote])
+        if (error) {
+            setShow(false)
+        }
+
+    }, [vote, error])
     
 
     const handleChange = (e) => {
