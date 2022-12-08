@@ -37,7 +37,10 @@ import {
     ADMIN_DETAILS_FAIL,
     VOTE_LOCATION_DETAILS_REQUEST,
     VOTE_LOCATION_DETAILS_SUCCESS,
-    VOTE_LOCATION_DETAILS_FAIL
+    VOTE_LOCATION_DETAILS_FAIL,
+    VOTE_LOCATION_GENDER_REQUEST,
+    VOTE_LOCATION_GENDER_SUCCESS,
+    VOTE_LOCATION_GENDER_FAIL
 } from '../constants/adminConstants';
 import axios from 'axios';
 
@@ -529,6 +532,44 @@ export const getVoteLocation = (val) => async (dispatch) => {
         
         dispatch({
             type: VOTE_LOCATION_DETAILS_FAIL,
+            payload: resErr
+        }) 
+    }
+}
+
+
+
+
+
+export const getVoteLocationGender = (val) => async (dispatch) => {
+
+    try {
+        
+        dispatch({
+            type: VOTE_LOCATION_GENDER_REQUEST
+        })
+
+        console.log(val);
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+
+        const { data } = await axios.post(`/api/analysis/oneLocationGender`, val, config)
+
+        dispatch({
+            type: VOTE_LOCATION_GENDER_SUCCESS,
+            payload: data.vote
+        })
+
+    } catch (error) {
+
+        const resErr =  error.response && error.response.data.message ? error.response.data.message : error.message
+        
+        dispatch({
+            type: VOTE_LOCATION_GENDER_FAIL,
             payload: resErr
         }) 
     }

@@ -38,7 +38,10 @@ import {
     ADMIN_DETAILS_FAIL,
     VOTE_LOCATION_DETAILS_REQUEST,
     VOTE_LOCATION_DETAILS_SUCCESS,
-    VOTE_LOCATION_DETAILS_FAIL
+    VOTE_LOCATION_DETAILS_FAIL,
+    VOTE_LOCATION_GENDER_REQUEST,
+    VOTE_LOCATION_GENDER_SUCCESS,
+    VOTE_LOCATION_GENDER_FAIL
 } from '../constants/adminConstants';
 
 
@@ -389,6 +392,32 @@ export const voteLocationDetailsReducer = (state = { vote: { } }, { type, payloa
             }
 
         case VOTE_LOCATION_DETAILS_FAIL:
+            return {
+                loading: false,
+                error: payload
+            }
+
+        default:
+            return state;
+    }
+}
+
+
+export const voteLocationGenderReducer = (state = { userVote: { } }, { type, payload }) => {
+
+    switch (type) {
+        case VOTE_LOCATION_GENDER_REQUEST:
+            return {
+                loading: true,
+            }
+        
+        case VOTE_LOCATION_GENDER_SUCCESS:
+            return {
+                loading: false,
+                userVote: payload
+            }
+
+        case VOTE_LOCATION_GENDER_FAIL:
             return {
                 loading: false,
                 error: payload
