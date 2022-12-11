@@ -557,7 +557,7 @@ export const getVoteLocationGender = (val) => async (dispatch) => {
             }
         }
 
-        const { data } = await axios.post(`/api/analysis/oneLocationGender`, val, config)
+        const { data } = await axios.post(`https://voting-app-server.onrender.com/api/analysis/oneLocationGender`, val, config)
 
         dispatch({
             type: VOTE_LOCATION_GENDER_SUCCESS,
