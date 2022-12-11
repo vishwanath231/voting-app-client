@@ -332,7 +332,7 @@ const AnalysisScreen = ({ voteDistrict, getVoteLocation, getVoteLocationGender, 
   
   
     const{ loading:userVoteLoading, userVote, error:userVoteError } = voteDistrictGender;
- console.log(userVote);
+
     return (
         <div className='bg-gray-100 min-h-screen'>
             <SideBar />
