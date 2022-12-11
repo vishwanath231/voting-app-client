@@ -40,7 +40,7 @@ const DashboardScreen = ({ getUserList, getNominationList, userList, nominationL
             <Header />
             <div className='md:ml-72 px-4'>
                 { error && <Message error msg={error} /> }
-                <div className='mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+                <div className='my-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
                     <Link to='/admin/userList' className='flex bg-white items-center shadow p-4 rounded hover:shadow-xl'>
                         <div className='p-4 rounded mr-6' style={{ background: 'linear-gradient(90deg, hsla(18, 76%, 85%, 1) 0%, hsla(203, 69%, 84%, 1) 100%)'  }}>
                             <img src={UserGif} alt='user' className='w-14 h-14' />
