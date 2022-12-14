@@ -58,17 +58,15 @@ const VerifyOtpScreen = ({ verifyOtp, userVerifyOTP, logout }) => {
           
             const next = elmnt.target.tabIndex - 2;
 
-            console.log(next);
-
-          if (next > -1) {
-            elmnt.target.form.elements[next].focus()
-          }
+              if (next > -1) {
+                  elmnt.target.form.elements[next].focus()
+              }
         }
         else {  
             const next = elmnt.target.tabIndex;
             
             if (next < 5) {
-              elmnt.target.form.elements[next].focus()
+                  elmnt.target.form.elements[next].focus()
             }
         }
     }
