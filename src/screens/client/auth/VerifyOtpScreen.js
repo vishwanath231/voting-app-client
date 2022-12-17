@@ -58,21 +58,21 @@ const VerifyOtpScreen = ({ verifyOtp, userVerifyOTP, logout }) => {
           
             const next = elmnt.target.tabIndex - 2;
 
-              if (next > -1) {
-                  elmnt.target.form.elements[next].focus()
-              }
+            if (next > -1) {
+                elmnt.target.form.elements[next].focus()
+            }
         }
         else {  
             const next = elmnt.target.tabIndex;
             
             if (next < 5) {
-                  elmnt.target.form.elements[next].focus()
+                elmnt.target.form.elements[next].focus()
             }
         }
     }
 
-    const [ minutes, setMinutes ] = useState(2);
-    const [seconds, setSeconds ] =  useState(0);
+    const [ minutes, setMinutes ] = useState(0);
+    const [seconds, setSeconds ] =  useState(5);
 
 
     useEffect(()=>{
@@ -177,7 +177,13 @@ const VerifyOtpScreen = ({ verifyOtp, userVerifyOTP, logout }) => {
                 
                 <div className='flex items-center sm:flex-row flex-col'>
                     <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full sm:w-fit sm:mr-3 mr-0 sm:mb-0 mb-3">Verify</button>
-                    <button type="button" onClick={logoutHandler} className="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full sm:w-fit">cancel</button>
+                    <button type="button" onClick={logoutHandler} className="text-white bg-[#e63946] hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-full sm:w-fit">Cancel</button>
+                </div>
+
+                <div className='my-6 w-fit p-4 rounded shadow bg-[#edf2f4]'>
+                    <div className='text-red-600 font-bold'>Don't refresh the page</div>
+                    <div className='mt-1'>Please do not share your <strong>OTP</strong> for security purpose.</div>
+                    <div className='mt-1'>Voting is your prior right, please do not be irresponsible with it.</div>
                 </div>
             </form>
         </div>
