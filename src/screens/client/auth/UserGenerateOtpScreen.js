@@ -122,6 +122,7 @@ const UserGenerateOtpScreen = ({ generateOtp , userGenerateOTP, logout}) => {
                             type="radio" 
                             value="phone" 
                             name="contact"
+                            disabled // disabled for phone number option
                             onChange={contactInfoHandler}
                             checked={ contactInfo === 'phone' }
                             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500" />
@@ -145,7 +146,7 @@ const UserGenerateOtpScreen = ({ generateOtp , userGenerateOTP, logout}) => {
                                 />
                             </div>
                             <div className="mb-6">
-                                <label htmlFor="pin" className="block mb-2 text-md font-medium text-gray-900">Enter two digits number <span className='text-red-500 text-base'>*</span></label>
+                                <label htmlFor="pin" className="block mb-2 text-md font-medium text-gray-900">Enter any two digits number <span className='text-red-500 text-base'>*</span></label>
                                 <input 
                                     type="number" 
                                     id="pin" 
@@ -175,7 +176,7 @@ const UserGenerateOtpScreen = ({ generateOtp , userGenerateOTP, logout}) => {
                                 />
                             </div>
                             <div className="mb-6">
-                                <label htmlFor="pin" className="block mb-2 text-md font-medium text-gray-900">Enter two digits number <span className='text-red-500 text-base'>*</span></label>
+                                <label htmlFor="pin" className="block mb-2 text-md font-medium text-gray-900">Enter any two digits number <span className='text-red-500 text-base'>*</span></label>
                                 <input 
                                     type="number" 
                                     id="pin" 
