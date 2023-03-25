@@ -87,6 +87,29 @@ const LoginScreen = ({ userLogin, userLoginInfo }) => {
                 <div className='mt-4 mb-2'>
                     <Link to='/admin/login' className='underline text-blue-800'>Administrator Login</Link>
                 </div>
+                <div className='bg-gray-50 shadow-md p-4 rounded my-5'>
+                    <div className='mb-3 text-xl uppercase'>Login Details</div>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                        <div className='shadow p-3 bg-white rounded'>
+                            <div className='mb-3 text-xl'>Person One</div>
+                            <div className='mb-2'>
+                                <span className='font-bold mr-1 text-[#e76f51]'>Register No:</span> 21csea35
+                            </div>
+                            <div>
+                                <span className='font-bold mr-1 text-[#e76f51]'>Date of Birth (DOB):</span>  09/03/2001
+                            </div>
+                        </div> 
+                        <div className='shadow p-3 bg-white rounded'>
+                            <div className='mb-3 text-xl'>Person Two</div>
+                            <div className='mb-2'>
+                                <span className='font-bold mr-1 text-[#e76f51]'>Register No:</span> 21csea34
+                            </div>
+                            <div>
+                                <span className='font-bold mr-1 text-[#e76f51]'>Date of Birth (DOB):</span>  14/11/2000
+                            </div>
+                        </div> 
+                    </div>
+                </div>
             </div>
         </main>
         

@@ -86,8 +86,18 @@ const AdminLoginScreen = ({ adminLoginInfo, adminLogin }) => {
                 </form>
                 <div className='mt-4 mb-2'>
                     <Link to='/' className='underline text-blue-800'>User Login</Link>
-                </div>   
+                </div>  
+                <div className='bg-gray-50 shadow-md p-4 rounded my-5'>
+                    <div className='mb-3 text-xl'>Administrator Login Details</div>
+                    <div className='mb-2'>
+                        <span className='font-bold mr-1 text-[#e76f51]'>Email:</span> admin@gmail.com
+                    </div>
+                    <div>
+                        <span className='font-bold mr-1 text-[#e76f51]'>Password:</span> admin123
+                    </div>
+                </div> 
             </div>
+
         </main>
         
     )
